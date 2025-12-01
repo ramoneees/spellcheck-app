@@ -10,8 +10,7 @@ A hybrid baseline+LLM spell-checking system optimized for slide speaker notes, b
 
 1. Clone the repository
 
-git clone <your-repo-url>
-cd speaker-notes-spellchecker
+git clone <[your-repo-url](https://github.com/ramoneees/spellcheck-app)>
 ⸻
 
 Backend Setup (Clojure + Leiningen)
