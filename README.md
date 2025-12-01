@@ -106,8 +106,6 @@ Core Components
 
 ⸻
 
-✍️ Written Component
-
 1. Approach and Key Design Decisions
 
 Hybrid architecture
