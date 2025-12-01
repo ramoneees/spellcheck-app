@@ -18,7 +18,7 @@ Backend Setup (Clojure + Leiningen)
 Requirements
 	•	Java 17+
 	•	Leiningen
-	•	OpenAI API key (optional but required for advanced mode)
+	•	OpenAI API key
 
 Environment Variable
 
