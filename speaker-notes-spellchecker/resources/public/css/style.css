@@ -1,0 +1,315 @@
+/* Global layout ---------------------------------------------------- */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a; /* dark blue */
+  color: #0f172a;
+}
+
+.app {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+/* Header ----------------------------------------------------------- */
+
+.app-header {
+  text-align: left;
+  margin-bottom: 24px;
+  color: #e5e7eb;
+}
+
+.app-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.app-tagline {
+  margin: 0;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* Layout grids ----------------------------------------------------- */
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.5fr);
+  gap: 16px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+  gap: 16px;
+}
+
+/* Card component --------------------------------------------------- */
+
+.card {
+  background: #0b1120;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #e5e7eb;
+}
+
+.card-header h2,
+.card-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card-subtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.card-body {
+  margin-top: 10px;
+}
+
+.card-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Textareas -------------------------------------------------------- */
+
+.notes-textarea,
+.context-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 10px 12px;
+  resize: vertical;
+  min-height: 140px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #e5e7eb;
+  background-color: #020617;
+}
+
+.context-textarea {
+  min-height: 100px;
+}
+
+.notes-textarea:focus,
+.context-textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.6);
+}
+
+/* Buttons ---------------------------------------------------------- */
+
+.btn {
+  font-size: 13px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  padding: 6px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  transition: transform 0.05s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #38bdf8, #22c55e);
+  color: #0b1120;
+  box-shadow: 0 8px 18px rgba(56, 189, 248, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(56, 189, 248, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+.btn-secondary:hover {
+  background: rgba(30, 64, 175, 0.8);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #9ca3af;
+  border: none;
+}
+
+.btn-ghost:hover {
+  color: #e5e7eb;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.btn-small {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+/* Preview + highlights --------------------------------------------- */
+
+.preview-box {
+  min-height: 120px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background-color: #020617;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.word-highlight {
+  background-color: rgba(250, 204, 21, 0.12);
+  border-bottom: 2px dotted #facc15;
+  border-radius: 3px;
+  padding: 0 2px;
+  cursor: help;
+}
+
+/* Suggestions ------------------------------------------------------ */
+
+.suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.suggestion-row {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.suggestion-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.suggestion-word-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.word-chip {
+  font-weight: 600;
+  font-size: 13px;
+  padding: 2px 8px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.suggestion-reason {
+  margin: 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.suggestion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* status colors ---------------------------------------------------- */
+
+.status-accepted {
+  border-color: #22c55e;
+}
+
+.status-rejected {
+  opacity: 0.6;
+}
+
+/* Badges ----------------------------------------------------------- */
+
+.badge {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.badge-ai {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.8);
+  color: #7dd3fc;
+}
+
+.badge-baseline {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.8);
+  color: #bbf7d0;
+}
+
+/* Banners & placeholders ------------------------------------------- */
+
+.banner {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.banner-info {
+  background: rgba(56, 189, 248, 0.1);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.banner-error {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.5);
+}
+
+.placeholder {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Responsive tweaks ------------------------------------------------ */
+
+@media (max-width: 900px) {
+  .editor-grid,
+  .results-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card {
+    padding: 14px 14px;
+  }
+}   

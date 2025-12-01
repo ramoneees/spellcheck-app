@@ -1,0 +1,22 @@
+{
+	"name": "speaker-notes-spellchecker",
+	"scripts": {
+		"ancient": "clojure -Sdeps '{:deps {com.github.liquidz/antq {:mvn/version \"RELEASE\"}}}' -m antq.core",
+		"watch": "npx shadow-cljs watch app browser-test karma-test",
+		"release": "npx shadow-cljs release app",
+		"build-report": "npx shadow-cljs run shadow.cljs.build-report app target/build-report.html"
+	},
+	"dependencies": {
+		"react": "17.0.2",
+		"react-dom": "17.0.2"
+	},
+	"devDependencies": {
+		"shadow-cljs": "^2.26.2"
+	},
+	"version": "1.0.0",
+	"description": "A [re-frame](https://github.com/day8/re-frame) application designed to ... well, that part is up to you.",
+	"main": "karma.conf.js",
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

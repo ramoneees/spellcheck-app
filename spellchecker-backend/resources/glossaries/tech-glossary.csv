@@ -1,0 +1,189 @@
+domain,term,description
+tech,API,Application Programming Interface
+tech,REST,Representational State Transfer
+tech,GraphQL,Query language for APIs
+tech,SDK,Software Development Kit
+tech,CLI,Command Line Interface
+tech,REPL,Read-Eval-Print Loop
+tech,CI,Continuous Integration
+tech,CD,Continuous Delivery
+tech,CI/CD,Continuous Integration / Continuous Deployment
+tech,Feature Flag,Toggleable feature mechanism
+tech,Canary Release,Incremental rollout deployment
+tech,Blue-Green Deployment,Deployment strategy with two environments
+tech,Git,Distributed version control system
+tech,GitHub,Source control hosting platform
+tech,GitLab,DevOps and code hosting platform
+tech,Bitbucket,Git repository hosting service
+tech,Kubernetes,Container orchestration system
+tech,K8s,Abbreviation for Kubernetes
+tech,Docker,Containerization platform
+tech,Containerd,Container runtime
+tech,Podman,Container engine
+tech,Helm,Kubernetes package manager
+tech,Ingress,Traffic routing component in Kubernetes
+tech,Namespace,Logical partition in Kubernetes
+tech,ConfigMap,Kubernetes configuration object
+tech,Secret,Kubernetes secret object
+tech,StatefulSet,Kubernetes workload type
+tech,DaemonSet,Kubernetes workload type
+tech,Sidecar,Pattern for attaching auxiliary services
+tech,Service Mesh,Networking layer for microservices
+tech,Istio,Service mesh for Kubernetes
+tech,Linkerd,Service mesh implementation
+tech,Envoy,High-performance proxy
+tech,AWS,Amazon Web Services
+tech,AWS Lambda,Serverless compute service
+tech,AWS S3,Object storage service
+tech,AWS EC2,Elastic Compute Cloud
+tech,AWS ECS,Elastic Container Service
+tech,AWS EKS,Elastic Kubernetes Service
+tech,AWS RDS,Relational Database Service
+tech,AWS DynamoDB,Managed NoSQL database
+tech,AWS CloudFormation,Infrastructure as Code
+tech,AWS CloudWatch,Monitoring and logging service
+tech,Azure,Microsoft Azure cloud platform
+tech,Azure Blob Storage,Cloud object storage service
+tech,Azure Functions,Serverless compute in Azure
+tech,GCP,Google Cloud Platform
+tech,BigQuery,Google cloud data warehouse
+tech,Cloud Run,Serverless containers on GCP
+tech,Cloud Functions,Serverless functions on GCP
+tech,Terraform,Infrastructure as Code tool
+tech,Ansible,Automation tool
+tech,Chef,Configuration management tool
+tech,Puppet,Configuration automation tool
+tech,Vault,Secret management system
+tech,Consul,Service discovery system
+tech,Prometheus,Monitoring and metrics system
+tech,Grafana,Visualization and monitoring dashboard
+tech,Loki,Log aggregation system
+tech,Jaeger,Distributed tracing system
+tech,Zipkin,Distributed tracing system
+tech,Jenkins,CI automation server
+tech,GitHub Actions,CI/CD system in GitHub
+tech,ArgoCD,GitOps deployment tool
+tech,Argo Workflows,Workflow engine for Kubernetes
+tech,React,JavaScript UI library
+tech,Redux,State management library
+tech,Clojure,Functional Lisp hosted on the JVM
+tech,ClojureScript,Clojure for JavaScript environments
+tech,Re-frame,FRP framework for ClojureScript
+tech,Shadow-cljs,Build tool for ClojureScript
+tech,Node.js,JavaScript runtime
+tech,NPM,Node package manager
+tech,Yarn,JavaScript package manager
+tech,ESLint,JavaScript linter
+tech,Prettier,Code formatter
+tech,TypeScript,Typed superset of JavaScript
+tech,Webpack,JavaScript bundler
+tech,Rollup,JavaScript bundler
+tech,Parcel,Zero-config bundler
+tech,Vite,Next-gen front-end tooling
+tech,ESBuild,Fast JavaScript bundler
+tech,HTML,HyperText Markup Language
+tech,CSS,Cascading Style Sheets
+tech,SASS,CSS preprocessor
+tech,Less,CSS preprocessor
+tech,Styled Components,Styling library for React
+tech,Storybook,UI component explorer
+tech,WebAssembly,Low-level binary format for the web
+tech,OpenAI,AI research and product company
+tech,GPT,Generative Pretrained Transformer
+tech,GPT-4,Large language model version 4
+tech,Embedding,Vector representation of text
+tech,Vector Embedding,Vector representation of text
+tech,RAG,Retrieval-Augmented Generation
+tech,LLM,Large Language Model
+tech,JSON,JavaScript Object Notation
+tech,XML,eXtensible Markup Language
+tech,YAML,YAML Ain't Markup Language
+tech,JWT,JSON Web Token
+tech,OAuth2,Authentication protocol
+tech,SAML,Security Assertion Markup Language
+tech,SSO,Single Sign-On
+tech,SSO SAML,SAML based Single Sign-On
+tech,SSO OIDC,OpenID Connect based Single Sign-On
+tech,OIDC,OpenID Connect
+tech,SSL,Secure Sockets Layer
+tech,TLS,Transport Layer Security
+tech,SSH,Secure Shell
+tech,VPN,Virtual Private Network
+tech,Load Balancer,Traffic distribution system
+tech,Reverse Proxy,Traffic routing service
+tech,NGINX,Web server and reverse proxy
+tech,Apache,Web server
+tech,MySQL,Relational database
+tech,PostgreSQL,Relational database
+tech,Redis,In-memory data store
+tech,Elasticsearch,Search and analytics engine
+tech,Logstash,Data ingestion pipeline
+tech,Kibana,Visualization tool for Elasticsearch
+tech,MongoDB,Document database
+tech,Cassandra,Distributed NoSQL database
+tech,Neo4j,Graph database
+tech,DynamoDB,NoSQL database on AWS
+tech,SQLite,Embedded SQL database
+tech,ClickHouse,Columnar OLAP database
+tech,Snowflake,Cloud data warehouse
+tech,Apache Kafka,Distributed event streaming platform
+tech,Kafka Streams,Stream processing library
+tech,Schema Registry,Central schema management for Kafka
+tech,Apache Spark,Cluster computing framework
+tech,Databricks,Unified data analytics platform
+tech,Airflow,Workflow orchestration engine
+tech,dbt,Data modeling and transformation tool
+tech,Parquet,Columnar data format
+tech,Avro,Serialization format
+tech,Protocol Buffers,Language-neutral serialization format
+tech,gRPC,High-performance RPC framework
+tech,REST API,HTTP-based API
+tech,WebSocket,Bi-directional web communication
+tech,HTTP,Hypertext Transfer Protocol
+tech,HTTPS,Secure HTTP
+tech,Rate Limiting,Traffic control mechanism
+tech,Circuit Breaker,Fault tolerance pattern
+tech,Retry Policy,Automatic retry strategy
+tech,Backoff,Retry delay strategy
+tech,Microservices,Distributed service architecture
+tech,Monolith,Single deployment architecture
+tech,Monorepo,Single repository for many services
+tech,Polyrepo,Multiple repositories for services
+tech,Serverless,Function-based compute
+tech,Edge Compute,Distributed low-latency compute
+tech,CDN,Content Delivery Network
+tech,Cloudflare,Cloud networking/security provider
+tech,Vercel,Frontend hosting provider
+tech,Netlify,Frontend hosting provider
+tech,Firebase,Google backend-as-a-service
+tech,Supabase,Open-source backend-as-a-service
+tech,Expo,React Native tooling
+tech,React Native,Mobile framework for React
+tech,Flutter,UI toolkit from Google
+tech,SwiftUI,UI framework for Apple platforms
+tech,Kotlin,Programming language on JVM
+tech,Scala,Programming language on JVM
+tech,Rust,Systems programming language
+tech,Go,Programming language also called Golang
+tech,Python,Programming language
+tech,NumPy,Python numeric computing library
+tech,Pandas,Python data analysis library
+tech,TensorFlow,Machine learning framework
+tech,PyTorch,Machine learning framework
+tech,Scikit-learn,Python ML library
+tech,FastAPI,Python web framework
+tech,Django,Python web framework
+tech,Flask,Minimal Python web framework
+tech,Spring Boot,Java application framework
+tech,Quarkus,Kubernetes-native Java framework
+tech,Micronaut,Modern Java framework
+tech,Gradle,Build automation tool
+tech,Maven,Build automation tool
+tech,Leiningen,Build tool for Clojure
+tech,Deps.edn,Clojure dependency configuration
+tech,Shadow-CLJS,Build tool for ClojureScript
+tech,Reagent,Minimalistic React wrapper for ClojureScript
+tech,Reitit,Routing library for Clojure/ClojureScript
+tech,Compojure,Routing library for Clojure
+tech,Pedestal,Clojure service framework
+tech,Nginx Ingress Controller,Nginx-based ingress for Kubernetes

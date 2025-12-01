@@ -1,0 +1,343 @@
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/ramoneees/Documents/sandbox/spellchecker-backend; lein update-in :dependencies conj '[nrepl,"1.5.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.58.0"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/ramoneees/Documents/sandbox/spellchecker-backend; lein update-in :dependencies conj '[nrepl,"1.5.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.58.0"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:51937 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+nil
+clj꞉user꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: glossary.clj
+#'spellchecker-backend.glossary/tech-glossary
+clj꞉spellchecker-backend.glossary꞉> 
+(glossary-by-domain "tech")
+; Execution error (IllegalArgumentException) at spellchecker-backend.glossary/load-glossary-csv (glossary.clj:13).
+; Cannot open <nil> as a Reader.
+clj꞉spellchecker-backend.glossary꞉> 
+(def glossary-rows
+  "Delay so we only parse the CSV once."
+  (delay
+    (load-glossary-csv "glossaries/tech-glossary.csv")))
+#'spellchecker-backend.glossary/glossary-rows
+clj꞉spellchecker-backend.glossary꞉> 
+(glossary-by-domain "tech")
+; Execution error (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:122).
+; Stream closed
+clj꞉spellchecker-backend.glossary꞉> 
+(io/resource "glossaries/tech-glossary.csv")
+#object[java.net.URL 0x7189313f "file:/Users/ramoneees/Documents/sandbox/spellchecker-backend/resources/glossaries/tech-glossary.csv"]
+clj꞉spellchecker-backend.glossary꞉> 
+(io/reader (io/resource "glossaries/tech-glossary.csv"))
+#object[java.io.BufferedReader 0x8c6100e "java.io.BufferedReader@8c6100e"]
+clj꞉spellchecker-backend.glossary꞉> 
+(csv/read-csv (io/reader (io/resource "glossaries/tech-glossary.csv")))
+(["domain" "term" "description"]
+ ["tech" "API" "Application Programming Interface"]
+ ["tech" "REST" "Representational State Transfer"]
+ ["tech" "GraphQL" "Query language for APIs"]
+ ["tech" "SDK" "Software Development Kit"]
+ ["tech" "CLI" "Command Line Interface"]
+ ["tech" "REPL" "Read-Eval-Print Loop"]
+ ["tech" "CI" "Continuous Integration"]
+ ["tech" "CD" "Continuous Delivery"]
+ ["tech" "CI/CD" "Continuous Integration / Continuous Deployment"]
+ ["tech" "Feature Flag" "Toggleable feature mechanism"]
+ ["tech" "Canary Release" "Incremental rollout deployment"]
+ ["tech" "Blue-Green Deployment" "Deployment strategy with two environments"]
+ ["tech" "Git" "Distributed version control system"]
+ ["tech" "GitHub" "Source control hosting platform"]
+ ["tech" "GitLab" "DevOps and code hosting platform"]
+ ["tech" "Bitbucket" "Git repository hosting service"]
+ ["tech" "Kubernetes" "Container orchestration system"]
+ ["tech" "K8s" "Abbreviation for Kubernetes"]
+ ["tech" "Docker" "Containerization platform"]
+ ["tech" "Containerd" "Container runtime"]
+ ["tech" "Podman" "Container engine"]
+ ["tech" "Helm" "Kubernetes package manager"]
+ ["tech" "Ingress" "Traffic routing component in Kubernetes"]
+ ["tech" "Namespace" "Logical partition in Kubernetes"]
+ ["tech" "ConfigMap" "Kubernetes configuration object"]
+ ["tech" "Secret" "Kubernetes secret object"]
+ ["tech" "StatefulSet" "Kubernetes workload type"]
+ ["tech" "DaemonSet" "Kubernetes workload type"]
+ ["tech" "Sidecar" "Pattern for attaching auxiliary services"]
+ ["tech" "Service Mesh" "Networking layer for microservices"]
+ ["tech" "Istio" "Service mesh for Kubernetes"]
+ ["tech" "Linkerd" "Service mesh implementation"]
+ ["tech" "Envoy" "High-performance proxy"]
+ ["tech" "AWS" "Amazon Web Services"]
+ ["tech" "AWS Lambda" "Serverless compute service"]
+ ["tech" "AWS S3" "Object storage service"]
+ ["tech" "AWS EC2" "Elastic Compute Cloud"]
+ ["tech" "AWS ECS" "Elastic Container Service"]
+ ["tech" "AWS EKS" "Elastic Kubernetes Service"]
+ ["tech" "AWS RDS" "Relational Database Service"]
+ ["tech" "AWS DynamoDB" "Managed NoSQL database"]
+ ["tech" "AWS CloudFormation" "Infrastructure as Code"]
+ ["tech" "AWS CloudWatch" "Monitoring and logging service"]
+ ["tech" "Azure" "Microsoft Azure cloud platform"]
+ ["tech" "Azure Blob Storage" "Cloud object storage service"]
+ ["tech" "Azure Functions" "Serverless compute in Azure"]
+ ["tech" "GCP" "Google Cloud Platform"]
+ ["tech" "BigQuery" "Google cloud data warehouse"]
+ ["tech" "Cloud Run" "Serverless containers on GCP"]
+ ...)
+clj꞉spellchecker-backend.glossary꞉> 
+(load-glossary-csv "glossaries/tech-glossary.csv")
+; Error printing return value (IOException) at java.io.BufferedReader/ensureOpen (BufferedReader.java:122).
+; Stream closed
+clj꞉spellchecker-backend.glossary꞉> 
+(defn- load-glossary-csv [resource-path]
+  (let [raw (slurp (io/resource resource-path))
+        rows (csv/read-csv raw)
+        header (mapv (comp keyword str/trim) (first rows))]
+    (mapv (fn [row]
+            (zipmap header (map str/trim row)))
+          (rest rows))))
+#'spellchecker-backend.glossary/load-glossary-csv
+clj꞉spellchecker-backend.glossary꞉> 
+(glossary-by-domain "tech")
+["API"]
+clj꞉spellchecker-backend.glossary꞉> 
+(delay
+    (load-glossary-csv "glossaries/tech-glossary.csv"))
+#<Delay@2fa45f4b: :not-delivered>
+clj꞉spellchecker-backend.glossary꞉> 
+(load-glossary-csv "glossaries/tech-glossary.csv")
+[{:domain "tech", :term "API", :description "Application Programming Interface"}
+ {:domain "tech", :term "REST", :description "Representational State Transfer"}
+ {:domain "tech", :term "GraphQL", :description "Query language for APIs"}
+ {:domain "tech", :term "SDK", :description "Software Development Kit"}
+ {:domain "tech", :term "CLI", :description "Command Line Interface"}
+ {:domain "tech", :term "REPL", :description "Read-Eval-Print Loop"}
+ {:domain "tech", :term "CI", :description "Continuous Integration"}
+ {:domain "tech", :term "CD", :description "Continuous Delivery"}
+ {:domain "tech", :term "CI/CD", :description "Continuous Integration / Continuous Deployment"}
+ {:domain "tech", :term "Feature Flag", :description "Toggleable feature mechanism"}
+ {:domain "tech", :term "Canary Release", :description "Incremental rollout deployment"}
+ {:domain "tech", :term "Blue-Green Deployment", :description "Deployment strategy with two environments"}
+ {:domain "tech", :term "Git", :description "Distributed version control system"}
+ {:domain "tech", :term "GitHub", :description "Source control hosting platform"}
+ {:domain "tech", :term "GitLab", :description "DevOps and code hosting platform"}
+ {:domain "tech", :term "Bitbucket", :description "Git repository hosting service"}
+ {:domain "tech", :term "Kubernetes", :description "Container orchestration system"}
+ {:domain "tech", :term "K8s", :description "Abbreviation for Kubernetes"}
+ {:domain "tech", :term "Docker", :description "Containerization platform"}
+ {:domain "tech", :term "Containerd", :description "Container runtime"}
+ {:domain "tech", :term "Podman", :description "Container engine"}
+ {:domain "tech", :term "Helm", :description "Kubernetes package manager"}
+ {:domain "tech", :term "Ingress", :description "Traffic routing component in Kubernetes"}
+ {:domain "tech", :term "Namespace", :description "Logical partition in Kubernetes"}
+ {:domain "tech", :term "ConfigMap", :description "Kubernetes configuration object"}
+ {:domain "tech", :term "Secret", :description "Kubernetes secret object"}
+ {:domain "tech", :term "StatefulSet", :description "Kubernetes workload type"}
+ {:domain "tech", :term "DaemonSet", :description "Kubernetes workload type"}
+ {:domain "tech", :term "Sidecar", :description "Pattern for attaching auxiliary services"}
+ {:domain "tech", :term "Service Mesh", :description "Networking layer for microservices"}
+ {:domain "tech", :term "Istio", :description "Service mesh for Kubernetes"}
+ {:domain "tech", :term "Linkerd", :description "Service mesh implementation"}
+ {:domain "tech", :term "Envoy", :description "High-performance proxy"}
+ {:domain "tech", :term "AWS", :description "Amazon Web Services"}
+ {:domain "tech", :term "AWS Lambda", :description "Serverless compute service"}
+ {:domain "tech", :term "AWS S3", :description "Object storage service"}
+ {:domain "tech", :term "AWS EC2", :description "Elastic Compute Cloud"}
+ {:domain "tech", :term "AWS ECS", :description "Elastic Container Service"}
+ {:domain "tech", :term "AWS EKS", :description "Elastic Kubernetes Service"}
+ {:domain "tech", :term "AWS RDS", :description "Relational Database Service"}
+ {:domain "tech", :term "AWS DynamoDB", :description "Managed NoSQL database"}
+ {:domain "tech", :term "AWS CloudFormation", :description "Infrastructure as Code"}
+ {:domain "tech", :term "AWS CloudWatch", :description "Monitoring and logging service"}
+ {:domain "tech", :term "Azure", :description "Microsoft Azure cloud platform"}
+ {:domain "tech", :term "Azure Blob Storage", :description "Cloud object storage service"}
+ {:domain "tech", :term "Azure Functions", :description "Serverless compute in Azure"}
+ {:domain "tech", :term "GCP", :description "Google Cloud Platform"}
+ {:domain "tech", :term "BigQuery", :description "Google cloud data warehouse"}
+ {:domain "tech", :term "Cloud Run", :description "Serverless containers on GCP"}
+ {:domain "tech", :term "Cloud Functions", :description "Serverless functions on GCP"}
+ ...]
+clj꞉spellchecker-backend.glossary꞉> 
+(glossary-by-domain "tech")
+["API"]
+clj꞉spellchecker-backend.glossary꞉> 
+(def glossary-rows
+  "Delay so we only parse the CSV once."
+  (delay
+    (load-glossary-csv "glossaries/tech-glossary.csv")))
+#'spellchecker-backend.glossary/glossary-rows
+clj꞉spellchecker-backend.glossary꞉> 
+(glossary-by-domain "tech")
+["API"
+ "AWS"
+ "AWS CloudFormation"
+ "AWS CloudWatch"
+ "AWS DynamoDB"
+ "AWS EC2"
+ "AWS ECS"
+ "AWS EKS"
+ "AWS Lambda"
+ "AWS RDS"
+ "AWS S3"
+ "Airflow"
+ "Ansible"
+ "Apache"
+ "Apache Kafka"
+ "Apache Spark"
+ "Argo Workflows"
+ "ArgoCD"
+ "Avro"
+ "Azure"
+ "Azure Blob Storage"
+ "Azure Functions"
+ "Backoff"
+ "BigQuery"
+ "Bitbucket"
+ "Blue-Green Deployment"
+ "CD"
+ "CDN"
+ "CI"
+ "CI/CD"
+ "CLI"
+ "CSS"
+ "Canary Release"
+ "Cassandra"
+ "Chef"
+ "Circuit Breaker"
+ "ClickHouse"
+ "Clojure"
+ "ClojureScript"
+ "Cloud Functions"
+ "Cloud Run"
+ "Cloudflare"
+ "Compojure"
+ "ConfigMap"
+ "Consul"
+ "Containerd"
+ "DaemonSet"
+ "Databricks"
+ "Deps.edn"
+ "Django"
+ ...]
+clj꞉spellchecker-backend.glossary꞉> 
+; Evaluating file: handler.clj
+#'spellchecker-backend.handler/app
+clj꞉spellchecker-backend.handler꞉> 
+; Evaluating file: user.clj
+#'user/reset
+clj꞉user꞉> 
+(go)
+(go)
+; Starting server on port 3000
+#object[org.eclipse.jetty.server.Server 0x2c9448f2 "Server@2c9448f2{STARTED}[11.0.18,sto=0]"]
+clj꞉user꞉> 
+; [spellcheck-request] body= {:notes In this slied we explane how our microservics comunicate using a pub sub pattern and how trafic is routed through our load blancer., :slideContext Title: Cloud Architecture Overview
+; Key Bullets:
+; 	•	Microservices communication
+; 	•	Event-driven design
+; 	•	Load balancing strategies
+; 
+; Audience:
+; Engineering team (backend + platform engineers)
+; 
+; Additional Context:
+; This slide introduces the high-level flow of cloud-based services., :deckGlossary [], :mode :auto}
+; mode  :auto
+; calling ai 
+; [spellcheck-response] result= {:notes In this slied we explane how our microservics comunicate using a pub sub pattern and how trafic is routed through our load blancer., :corrected In this slide we explain how our microservices communicate using a pub sub pattern and how traffic is routed through our load balancer., :suggestions [{:id c2c90dc1-32eb-421b-9e2a-ccd1920d8a0f, :offset 8, :length 5, :original slied, :candidates [{:text slide, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 9f64aab2-d727-4bbb-a84a-3fc30f3e542f, :offset 17, :length 7, :original explane, :candidates [{:text explain, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id ec565b13-1f2d-4450-bb13-b639fc8dba84, :offset 33, :length 12, :original microservics, :candidates [{:text microservices, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id b27ee7d4-c4e4-4aab-a230-49106cde8ab8, :offset 46, :length 10, :original comunicate, :candidates [{:text communicate, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 89934bf6-3de1-4fc8-b4b7-c37746710d3d, :offset 89, :length 6, :original trafic, :candidates [{:text traffic, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction}], :modeUsed :ai-auto}
+; [spellcheck-request] body= {:notes In this slide we explane how our microservics comunicate using a pub sub pattern and how trafic is routed through our load blancer., :slideContext Title: Cloud Architecture Overview
+; Key Bullets:
+; 	•	Microservices communication
+; 	•	Event-driven design
+; 	•	Load balancing strategies
+; 
+; Audience:
+; Engineering team (backend + platform engineers)
+; 
+; Additional Context:
+; This slide introduces the high-level flow of cloud-based services., :deckGlossary [], :mode :auto}
+; mode  :auto
+; calling ai 
+; [spellcheck-response] result= {:notes In this slide we explane how our microservics comunicate using a pub sub pattern and how trafic is routed through our load blancer., :corrected In this slide we explain how our microservices communicate using a pub sub pattern and how traffic is routed through our load balancer., :suggestions [{:id bb6ea4d2-d00f-4f25-a86d-c442dbbd02d0, :offset 17, :length 7, :original explane, :candidates [{:text explain, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id a5b8b40b-52e0-41c8-9926-fd649c1df832, :offset 33, :length 12, :original microservics, :candidates [{:text microservices, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 9dd0ac0b-47d8-49ea-8ab3-de8cfabd2f54, :offset 46, :length 10, :original comunicate, :candidates [{:text communicate, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id be762c01-0444-45ec-9f5a-e7c2c38b9b9a, :offset 89, :length 6, :original trafic, :candidates [{:text traffic, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 64a99d20-27e7-442c-926c-5d6e79919ab8, :offset 123, :length 7, :original blancer, :candidates [{:text balancer, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction}], :modeUsed :ai-auto}
+; [spellcheck-request] body= {:notes The current data pipline was configurated with several custome connectors that were intended to improve the ingestion, but over time the amount of transform logic has expanded faster than expected and now the latency patterns show inconsistant behavior. Even when the upstream jobs completes at the right time, the downstream triggers doesnt always fire correctly which forces engineers to restart the jobs manually., :slideContext Slide Context
+; 
+; Title: Data Engineering Pipeline Overview
+; Key Bullets:
+; 	•	Ingestion
+; 	•	Transformation
+; 	•	Scheduling
+; 	•	Latency metrics
+; 
+; Audience:
+; Data engineering, analytics platform teams
+; 
+; Additional Context:
+; Pipeline uses Airflow + Spark; teams review latency metrics monthly.
+; , :deckGlossary [], :mode :auto}
+; mode  :auto
+; calling ai 
+; [spellcheck-response] result= {:notes The current data pipline was configurated with several custome connectors that were intended to improve the ingestion, but over time the amount of transform logic has expanded faster than expected and now the latency patterns show inconsistant behavior. Even when the upstream jobs completes at the right time, the downstream triggers doesnt always fire correctly which forces engineers to restart the jobs manually., :corrected The current data pipeline was configured with several custom connectors that were intended to improve the ingestion, but over time the amount of transform logic has expanded faster than expected and now the latency patterns show inconsistent behavior. Even when the upstream jobs complete at the right time, the downstream triggers don't always fire correctly which forces engineers to restart the jobs manually., :suggestions [{:id 60805ce6-c3bf-455f-a35a-0e86b4f5f48d, :offset 17, :length 7, :original pipline, :candidates [{:text pipeline, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 5fb5d78e-6b08-43a6-b590-5be14317b81e, :offset 29, :length 12, :original configurated, :candidates [{:text configured, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 62e03243-5665-4ca9-aac8-8d60ca6228a7, :offset 55, :length 7, :original custome, :candidates [{:text custom, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 92bda37c-9755-4963-97ba-dd263570fd13, :offset 231, :length 12, :original inconsistant, :candidates [{:text inconsistent, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id de4007b8-cecb-4cec-a59d-c18fb5d24b29, :offset 282, :length 9, :original completes, :candidates [{:text complete, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 38991e97-0410-4172-9771-d5742947a1c9, :offset 335, :length 6, :original doesnt, :candidates [{:text don't, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction}], :modeUsed :ai-auto}
+; [spellcheck-request] body= {:notes Our Kafka Strems aplicatoin processes messags from the topic and uses Schema Repstry to validate the payloads. If there is a missmatch in the schema version the aplicatoin publishes an alert to the monitoring system and then retries with a backoff stratgey. The consumer lag should remain low if the parttions are balanced correctly., :slideContext Slide Context
+; 
+; Title: Event Streaming Architecture with Kafka
+; Key Bullets:
+; 	•	Kafka Streams
+; 	•	Schema Registry
+; 	•	Consumer Lag
+; 	•	Backoff & Retry
+; 
+; Audience:
+; Backend engineers building streaming ETL pipelines
+; 
+; Additional Context:
+; Team uses Confluent stack + custom stream processors., :deckGlossary [], :mode :auto}
+; mode  :auto
+; calling ai 
+; [spellcheck-response] result= {:notes Our Kafka Strems aplicatoin processes messags from the topic and uses Schema Repstry to validate the payloads. If there is a missmatch in the schema version the aplicatoin publishes an alert to the monitoring system and then retries with a backoff stratgey. The consumer lag should remain low if the parttions are balanced correctly., :corrected Our Kafka Streams application processes messages from the topic and uses Schema Registry to validate the payloads. If there is a mismatch in the schema version, the application publishes an alert to the monitoring system and then retries with a backoff strategy. The consumer lag should remain low if the partitions are balanced correctly., :suggestions [{:id ad658e83-9f72-40ce-b4d3-f51e4ddf7601, :offset 10, :length 6, :original Strems, :candidates [{:text Streams, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 542e6329-1d39-4e2f-a51f-1959d426dcf5, :offset 17, :length 10, :original aplicatoin, :candidates [{:text application, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 718b543d-baa6-4a4c-a238-1b6fc7f2f35e, :offset 38, :length 7, :original messags, :candidates [{:text messages, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 443b9aa4-dc2c-423f-adb1-12c8af594a69, :offset 125, :length 9, :original missmatch, :candidates [{:text mismatch, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id cd076886-4df0-4d33-a466-780aae2519a0, :offset 17, :length 10, :original aplicatoin, :candidates [{:text application, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id a108edb0-e7e7-459e-97ed-6686cebe15ea, :offset 248, :length 8, :original stratgey, :candidates [{:text strategy, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction} {:id 5e1d31ed-2ac3-4ed4-825f-fd30865b58c9, :offset 300, :length 9, :original parttions, :candidates [{:text partitions, :source :ai, :confidence 0.99}], :source :ai, :status :pending, :reason AI-suggested correction}], :modeUsed :ai-auto}

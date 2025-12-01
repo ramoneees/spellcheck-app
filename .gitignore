@@ -1,0 +1,50 @@
+############################
+# OS / Editor Junk
+############################
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/
+.lsp/
+.clj-kondo/
+*.swp
+*.swo
+
+############################
+# Backend: Clojure / Leiningen
+############################
+spellchecker-backend/target
+spellchecker-backend/classes
+spellchecker-backend/checkouts
+spellchecker-backend/.lein-repl-history
+spellchecker-backend/.nrepl-port
+spellchecker-backend/.cpcache
+spellchecker-backend/.lsp/
+spellchecker-backend/repl-port
+spellchecker-backend/.lein-failures
+
+############################
+# Backend: ClojureScript compilation
+############################
+spellchecker-backend/resources/public/js/compiled/
+
+############################
+# Frontend: Shadow-CLJS
+############################
+speaker-notes-spellchecker/.shadow-cljs/
+speaker-notes-spellchecker/out/
+speaker-notes-spellchecker/public/js/
+speaker-notes-spellchecker/public/cljs-out/
+
+############################
+# Frontend: Node / JS
+############################
+speaker-notes-spellchecker/node_modules/
+speaker-notes-spellchecker/resources/public/js/compiled
+speaker-notes-spellchecker/package-lock.json    
+speaker-notes-spellchecker/karma-.json
+speaker-notes-spellchecker/npm-debug.log*
+speaker-notes-spellchecker/yarn-debug.log*
+speaker-notes-spellchecker/yarn-error.log*
+
